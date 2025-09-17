@@ -8,8 +8,8 @@ from config.settings import ADMIN_IDS
 from src.database import (
     create_event, get_active_events, get_event_by_id,
     Event, Outcome, EventStatus, BetStatus, get_db, SessionLocal,
-    update_user_balance
-)
+    update_user_balance, DATABASE_URL, User, Bet
+) # Добавлены DATABASE_URL, User, Bet для show_admin_stats
 
 def is_admin(user_id: int) -> bool:
     """Проверить, является ли пользователь администратором"""

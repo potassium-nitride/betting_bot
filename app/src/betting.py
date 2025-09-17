@@ -3,11 +3,11 @@
 """
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from src.database import (
+from app.src.database import (
     get_event_by_id, get_user, create_bet, get_user_bets,
     BetStatus, EventStatus
-)
-from config.settings import MIN_BET_AMOUNT, MAX_BET_AMOUNT
+) # Исправлен импорт
+from app.config.settings import MIN_BET_AMOUNT, MAX_BET_AMOUNT
 
 async def bet_handler(update: Update, context: ContextTypes.DEFAULT_TYPE, callback_data: str):
     """Обработчик ставок"""
