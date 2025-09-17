@@ -1,0 +1,47 @@
+{
+  "name": "Telegram Betting Bot",
+  "description": "Telegram-бот для приема ставок на спортивные события",
+  "repository": "https://github.com/your-username/betting-bot",
+  "logo": "https://telegram.org/img/t_logo.png",
+  "keywords": ["telegram", "bot", "betting", "sports", "python"],
+  "stack": "heroku-22",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token (получить у @BotFather)",
+      "required": true
+    },
+    "ADMIN_IDS": {
+      "description": "ID администраторов через запятую",
+      "required": true
+    },
+    "DATABASE_URL": {
+      "description": "URL базы данных PostgreSQL",
+      "required": false
+    },
+    "MIN_BET_AMOUNT": {
+      "description": "Минимальная сумма ставки",
+      "value": "10.0",
+      "required": false
+    },
+    "MAX_BET_AMOUNT": {
+      "description": "Максимальная сумма ставки",
+      "value": "10000.0",
+      "required": false
+    },
+    "HOUSE_EDGE": {
+      "description": "Комиссия дома (0.05 = 5%)",
+      "value": "0.05",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
